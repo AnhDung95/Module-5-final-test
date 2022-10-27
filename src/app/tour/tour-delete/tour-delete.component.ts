@@ -11,7 +11,7 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 })
 export class TourDeleteComponent implements OnInit {
   sub: Subscription;
-  tours: Tour = {
+  tour: Tour = {
     id: 0,
     title: 'title',
     description: 'Mo ta',
@@ -29,7 +29,7 @@ export class TourDeleteComponent implements OnInit {
   }
   getTour(id: number) {
     this.tourService.findById(id).subscribe(tours => {
-      this.tours = tours;
+      this.tour = tours;
     });
   }
   deleteTour(id: number) {

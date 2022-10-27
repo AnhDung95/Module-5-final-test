@@ -1,5 +1,5 @@
 <h1>Danh sách tour</h1>
-<a routerLink="/tuors/create">Tạo mới tour</a>
+<a routerLink="/tour/create">Tạo mới tour</a>
 <table>
   <tr>
     <td>STT</td>
@@ -13,7 +13,7 @@
     <td>{{tour.title}}</td>
     <td>{{tour.price}}</td>
 <!--    <td>{{tour.description}}</td>-->
-    <td><a [routerLink]="['/tuors/edit',tour.id]">Edit</a></td>
-    <td><a [routerLink]="['/tuors/delete',tour.id]">Delete</a></td>
+    <td><a [routerLink]="['/tour/edit',tour.id]">Edit</a></td>
+    <td><a [routerLink]="['/tour/delete',tour.id]">Delete</a></td>
   </tr>
 </table>

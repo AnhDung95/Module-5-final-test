@@ -8,7 +8,7 @@ import {TourCreateComponent} from './tour/tour-create/tour-create.component';
 import {TourEditComponent} from './tour/tour-edit/tour-edit.component';
 import {TourDeleteComponent} from './tour/tour-delete/tour-delete.component';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

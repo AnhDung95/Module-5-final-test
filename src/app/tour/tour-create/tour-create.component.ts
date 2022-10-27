@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {TourService} from '../../service/tour.service';
 
 @Component({
   selector: 'app-tour-create',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tour-create.component.css']
 })
 export class TourCreateComponent implements OnInit {
+  tourForm: FormGroup = new FormGroup({
+    id: new FormControl(),
+    title: new FormControl(),
+    price: new FormControl(),
+    description: new FormControl(),
+  });
 
-  constructor() { }
+  constructor(private tourService: TourService) { }
 
   ngOnInit() {
+  }
+  submit() {
+    const tour = this.tourForm.value;
+    this.tourService.saveTour(tour).subscribe(() => {
+      this.tourForm.reset();
+      alert('Tao thanh cong');
+    }, e => {
+      console.log(e);
+    });
   }
 
 }
